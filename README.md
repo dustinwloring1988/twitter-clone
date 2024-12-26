@@ -1,4 +1,5 @@
 # Social Site Starter 🚀
+![image](https://github.com/user-attachments/assets/1ad9dd08-e626-4f8e-8849-dad68c6cfc34)
 
 A modern, feature-rich starter template for building social networking applications. Built with Node.js and modern web technologies.
 
