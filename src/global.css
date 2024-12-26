@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased text-gray-900 dark:text-gray-100;
+}
+
+/* Base styles */
+.sidebar-link {
+  @apply flex items-center gap-4 p-3 w-full rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-lg;
+}
+
+.sidebar-link.active {
+  @apply font-bold;
+}
+
+/* Accessibility */
+[data-reduce-motion="true"] * {
+  @apply !transition-none !animate-none !duration-0;
+}
+
+[data-increase-contrast="true"] {
+  @apply [&_*]:!contrast-125;
+}
+
+/* Font sizes */
+.text-sm {
+  @apply text-[14px] leading-[20px];
+}
+
+.text-base {
+  @apply text-[16px] leading-[24px];
+}
+
+.text-lg {
+  @apply text-[18px] leading-[28px];
+}
+
+.text-xl {
+  @apply text-[20px] leading-[32px];
+}
+
+/* Add styles for filled heart icon */
+.heart-filled {
+  @apply fill-current;
+}

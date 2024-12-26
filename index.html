@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231DA1F2'%3E%3Cpath d='M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z'/%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chirp</title>
+    <script>
+      // Immediately apply theme from storage to prevent flashing
+      try {
+        const themeData = localStorage.getItem('theme-storage');
+        if (themeData) {
+          const { state } = JSON.parse(themeData);
+          if (state.isDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          // If no stored theme, use system preference
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        // If there's any error, fallback to light theme
+        console.error('Error applying theme:', e);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
